@@ -1,0 +1,175 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Background and Container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+ 
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 50vh;
+    max-width: 100%;
+}
+.video button{
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.container {
+    position: absolute;
+    text-align: center;
+    color: #333;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    animation: fadeIn 2s ease;
+}
+
+.card h1 {
+    font-size: 2.5rem;
+    color: #ff7171;
+}
+
+.card p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.card button {
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 25px;
+    background: #ff7171;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.card button:hover {
+    background: #ff4b4b;
+}
+
+/* Balloon Animation */
+.balloons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 60px;
+    height: 80px;
+    background-color: #ff7171;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: #555;
+    transform: translateX(-50%);
+}
+
+.balloon1 {
+    left: 20%;
+    background-color: #ff7171;
+    animation-delay: 0s;
+}
+
+.balloon2 {
+    left: 50%;
+    background-color: #ffb6b6;
+    animation-delay: 2s;
+}
+
+.balloon3 {
+    left: 80%;
+    background-color: #ffa3a3;
+    animation-delay: 4s;
+}
+
+/* Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .card h1 {
+        font-size: 2rem;
+    }
+    .card p {
+        font-size: 1rem;
+    }
+    .balloon {
+        width: 40px;
+        height: 60px;
+    }
+}
+
